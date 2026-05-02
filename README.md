@@ -22,6 +22,7 @@ The protobuf tools (`buf`, `protoc-gen-es`, `protoc`) are installed through the 
 npm install
 npm run lint
 npm run generate
+npm run build
 cargo test --workspace
 ```
 
