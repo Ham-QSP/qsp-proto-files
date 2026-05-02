@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "buf lint",
     "generate": "buf generate",
-    "build": "npm --workspace @qsp/proto-files run build"
+    "build": "npm --workspace @ham-qsp/proto-files run build"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.50.0",
