@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package qsp.trxcontrol.v1;
+
+message AgentControlMessage {
+    uint64 id = 1;
+    uint64 response_id = 2;
+    Payload payload = 3;
+}
+
+message Payload {
+  oneof value {
+    Hello hello = 1;
+    VfoState vfo_state = 2;
+  }
+}
+
+message VfoState {
+  uint64 frequency = 1;
+  string vfo_mode = 2;
+}
+
+message Hello {
+  uint32 protocol_version_major = 1;
+  uint32 protocol_version_minor = 2;
+}
+
+enum VfoMode {
+  VFO_MODE_UNSPECIFIED = 0;
+  VFO_MODE_CW = 1;
+  VFO_MODE_USB = 2;
+  VFO_MODE_LSB = 3;
+  VFO_MODE_RTTY = 4;
+  VFO_MODE_FM = 5;
+  VFO_MODE_WFM = 6;
+  VFO_MODE_CWR = 7;
+  VFO_MODE_RTTYR = 8;
+  VFO_MODE_AMS = 9;
+  VFO_MODE_PKTLSB = 10;
+  VFO_MODE_PKTUSB = 11;
+  VFO_MODE_PKTFM = 12;
+  VFO_MODE_ECSSUSB = 13;
+  VFO_MODE_EXSSLSB = 14;
+  VFO_MODE_FAX = 15;
+  VFO_MODE_SAM = 16;
+  VFO_MODE_DSB = 17;
+  VFO_MODE_FMN = 18;
+  VFO_MODE_PKTAM = 19;
+  VFO_MODE_P25 = 20;
+  VFO_MODE_DSTAR = 21;
+  VFO_MODE_DPMR = 22;
+  VFO_MODE_NXDNVN = 23;
+  VFO_MODE_NXDN_N = 24;
+  VFO_MODE_DCR = 25;
+  VFO_MODE_AMN = 26;
+  VFO_MODE_PSK = 27;
+  VFO_MODE_PSKR = 28;
+  VFO_MODE_DD = 29;
+  VFO_MODE_C4FM = 30;
+  VFO_MODE_PKTFMN = 31;
+  VFO_MODE_SPEC = 32;
+  VFO_MODE_CWN = 33;
+  VFO_MODE_AM = 34;
+}
