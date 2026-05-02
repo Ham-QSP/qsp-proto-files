@@ -1,0 +1,10 @@
+version: v2
+inputs:
+  - directory: .
+    paths:
+      - proto
+plugins:
+  - local: protoc-gen-es
+    out: packages/typescript/src/gen
+    opt:
+      - target=ts

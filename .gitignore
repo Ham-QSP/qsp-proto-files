@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+
+target/
+Cargo.lock
+
+node_modules/
+package-lock.json
+
+packages/typescript/dist/
+packages/typescript/src/gen/
