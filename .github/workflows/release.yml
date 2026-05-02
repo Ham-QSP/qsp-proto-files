@@ -18,11 +18,11 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com
-          scope: "@qsp"
+          scope: "@ham-qsp"
 
       - run: npm install
       - run: npm run generate
       - run: npm run build
-      - run: npm --workspace @qsp/proto-files publish
+      - run: npm --workspace @ham-qsp/qsp-proto-files publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
