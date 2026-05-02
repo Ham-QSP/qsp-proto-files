@@ -10,8 +10,8 @@ message AgentControlMessage {
 
 message Payload {
   oneof value {
-    VfoState vfoState = 1;
-    PayloadB b = 2;
+    Hello b = 1;
+    VfoState vfoState = 2;
   }
 }
 
@@ -20,8 +20,9 @@ message VfoState {
   string VfoMode = 2;
 }
 
-message PayloadB {
-  int32 count = 1;
+message Hello {
+  uint32 protocolVersionMajor = 1;
+  uint32 protocolVersionMinor = 2;
 }
 
 enum VfoMode {

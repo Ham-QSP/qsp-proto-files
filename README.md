@@ -34,9 +34,6 @@ cargo test --workspace
 
 ## Publish
 
-The `.github/workflows/release.yml` workflow publishes on a `v*` tag.
+The `.github/workflows/release.yml` workflow publishes the TypeScript package to GitHub Packages on a `v*` tag.
 
-Required GitHub secrets:
-
-- `NPM_TOKEN` to publish `@qsp/proto-files`.
-- `CARGO_REGISTRY_TOKEN` to publish `qsp-proto-files`.
+It uses the built-in `GITHUB_TOKEN`, so no external registry secret is required.

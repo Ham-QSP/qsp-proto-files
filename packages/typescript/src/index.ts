@@ -1,1 +1,1 @@
-export * from "./gen/qsp/example/v1/example_pb.js";
+export * from "./gen/proto/qsp/trx-control/v1/trx-control_pb.js";
