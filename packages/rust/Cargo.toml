@@ -1,13 +1,13 @@
 [package]
 name = "qsp-proto-files"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Generated Rust bindings for QSP protobuf schemas."
 repository = "https://github.com/f4fez/qsp-proto-files"
 
 [dependencies]
-prost = "0.13"
+prost = "0.14"
 
 [build-dependencies]
-prost-build = "0.13"
+prost-build = "0.14"
 protoc-bin-vendored = "3"
