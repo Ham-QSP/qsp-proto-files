@@ -3,29 +3,41 @@ syntax = "proto3";
 package qsp.trxcontrol.v1;
 
 message AgentControlMessage {
-    uint64 id = 1;
-    uint64 response_id = 2;
-    Payload payload = 3;
-}
 
-message Payload {
-  oneof value {
-    Hello hello = 1;
-    VfoState vfo_state = 2;
+  oneof message {
+    AgentMessage agent = 1;
+    TransceiverMessage transceiver = 10;
   }
 }
 
-message VfoState {
-  uint64 frequency = 1;
-  string vfo_mode = 2;
+message AgentMessage {
+  oneof agent_message {
+    HelloCommand hello = 1;
+  }
 }
-
-message Hello {
+message HelloCommand {
   uint32 protocol_version_major = 1;
   uint32 protocol_version_minor = 2;
 }
 
-enum VfoMode {
+message TransceiverMessage {
+
+  oneof transceiver_message {
+    TrxFrequency frequency_message = 1;
+  }
+}
+
+message TrxFrequency {
+  uint32 vfo_id = 1;
+  uint64 frequency = 2;
+}
+
+message TrxMode {
+  uint32 vfo_id = 1;
+  TrxVfoMode mode = 2;
+}
+
+enum TrxVfoMode {
   VFO_MODE_UNSPECIFIED = 0;
   VFO_MODE_CW = 1;
   VFO_MODE_USB = 2;

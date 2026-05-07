@@ -26,15 +26,6 @@ npm run build
 cargo test --workspace
 ```
 
-## Add a Schema
-
-1. Add the `.proto` file under `proto/qsp/<domain>/v1/`.
-2. Declare a stable protobuf `package`, for example `qsp.user.v1`.
-3. Add the file to `packages/rust/build.rs`.
-4. Run `npm run generate`, then `cargo test --workspace`.
-
 ## Publish
 
 The `.github/workflows/release.yml` workflow publishes the TypeScript package to GitHub Packages on a `v*` tag.
-
-It uses the built-in `GITHUB_TOKEN`, so no external registry secret is required.
