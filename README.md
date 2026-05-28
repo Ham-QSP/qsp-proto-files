@@ -27,5 +27,9 @@ cargo test --workspace
 ```
 
 ## Publish
+Set the future version and commit in:
+- Cargo.toml
+- package.json
 
+The create a github release and tag.
 The `.github/workflows/release.yml` workflow publishes the TypeScript package to GitHub Packages on a `v*` tag.
