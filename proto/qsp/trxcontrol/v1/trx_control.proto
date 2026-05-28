@@ -3,7 +3,6 @@ syntax = "proto3";
 package qsp.trxcontrol.v1;
 
 message AgentControlMessage {
-
   oneof message {
     AgentMessage agent = 1;
     TransceiverMessage transceiver = 10;
@@ -24,6 +23,8 @@ message TransceiverMessage {
 
   oneof transceiver_message {
     TrxFrequency frequency_message = 1;
+    TrxMode mode_message = 2;
+    TrxBand band_message = 3;
   }
 }
 
@@ -35,6 +36,11 @@ message TrxFrequency {
 message TrxMode {
   uint32 vfo_id = 1;
   TrxVfoMode mode = 2;
+}
+
+message TrxBand {
+  uint32 vfo_id = 1;
+  Band band = 2;
 }
 
 enum TrxVfoMode {
@@ -73,4 +79,32 @@ enum TrxVfoMode {
   TRX_VFO_MODE_SPEC = 32;
   TRX_VFO_MODE_CWN = 33;
   TRX_VFO_MODE_AM = 34;
+}
+
+enum Band {
+  BAND_UNSPECIFIED = 0;
+  BAND_2200M = 1;
+  BAND_600M = 2;
+  BAND_160M = 3;
+  BAND_80M = 4;
+  BAND_60M = 5;
+  BAND_40M = 6;
+  BAND_30M = 7;
+  BAND_20M = 8;
+  BAND_17M = 9;
+  BAND_15M = 10;
+  BAND_12M = 11;
+  BAND_1OM = 12;
+  BAND_6M = 13;
+  BAND_4M = 14;
+  BAND_2M = 15;
+  BAND_1_25M = 16;
+  BAND_70CM = 17;
+  BAND_33CM = 18;
+  BAND_23CM = 19;
+  BAND_13CM = 20;
+  BAND_9CM = 21;
+  BAND_5CM = 22;
+  BAND_3CM = 23;
+  BAND_12MM = 24;
 }
