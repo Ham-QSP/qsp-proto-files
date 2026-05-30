@@ -43,6 +43,24 @@ message TrxBand {
   Band band = 2;
 }
 
+message TrxCapabilities {
+  uint32 rig_model = 1;
+  string model_name = 2;
+  string manufacturer_name = 3;
+  repeated RigFrequencyRange rx_frequency_ranges = 4;
+  repeated RigFrequencyRange tx_frequency_ranges = 5;
+}
+
+message RigFrequencyRange {
+  uint32 region = 1;
+  uint64 lower_frequency_hz = 2;
+  uint64 upper_frequency_hz = 3;
+  repeated TrxVfoMode modes = 4;
+  uint32 vfo = 5;
+  uint32 antenna = 6;
+  optional string label = 7;
+}
+
 enum TrxVfoMode {
   TRX_VFO_MODE_UNSPECIFIED = 0;
   TRX_VFO_MODE_CW = 1;
