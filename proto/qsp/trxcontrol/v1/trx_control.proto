@@ -25,6 +25,7 @@ message TransceiverMessage {
     TrxFrequency frequency_message = 1;
     TrxMode mode_message = 2;
     TrxBand band_message = 3;
+    TrxCapabilities trx_capabilities = 4;
   }
 }
 
