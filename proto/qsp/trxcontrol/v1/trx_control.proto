@@ -22,76 +22,81 @@ message HelloCommand {
 message TransceiverMessage {
 
   oneof transceiver_message {
-    TrxFrequency frequency_message = 1;
-    TrxMode mode_message = 2;
-    TrxBand band_message = 3;
-    TrxCapabilities trx_capabilities = 4;
+    TrxFrequencyMessage frequency_message = 1;
+    TrxModeMessage mode_message = 2;
+    TrxBandMessage band_message = 3;
+    TrxCapabilitiesMessage trx_capabilities_message = 4;
+    TrxVfoOperationMessage trx_vfo_message = 5;
   }
 }
 
-message TrxFrequency {
+message TrxFrequencyMessage {
   uint32 vfo_id = 1;
   uint64 frequency = 2;
 }
 
-message TrxMode {
+message TrxModeMessage {
   uint32 vfo_id = 1;
   TrxVfoMode mode = 2;
 }
 
-message TrxBand {
+message TrxBandMessage {
   uint32 vfo_id = 1;
   Band band = 2;
 }
+message TrxVfoOperationMessage {
+  uint32 vfo_id = 1;
+  TrxVfoOperationMessage operation = 2;
+}
 
-message TrxCapabilities {
+message TrxCapabilitiesMessage {
   uint32 rig_model = 1;
   string model_name = 2;
   string manufacturer_name = 3;
-  repeated RigFrequencyRange rx_frequency_ranges = 4;
-  repeated RigFrequencyRange tx_frequency_ranges = 5;
+  repeated RigFrequencyRangeMessage rx_frequency_ranges = 4;
+  repeated RigFrequencyRangeMessage tx_frequency_ranges = 5;
 }
 
-message RigFrequencyRange {
+message RigFrequencyRangeMessage {
   uint32 list_id = 1;
   uint64 lower_frequency_hz = 2;
   uint64 upper_frequency_hz = 3;
   repeated TrxVfoMode modes = 4;
-  repeated RigVfoFlag vfo = 5;
-  repeated RigAntenna antenna = 6;
+  repeated TrxVfoFlag vfo = 5;
+  repeated TrxAntenna antenna = 6;
   optional string label = 7;
 }
 
-enum RigVfoFlag {
-  RIG_VFO_FLAG_UNSPECIFIED = 0;
-  RIG_VFO_FLAG_A = 1;
-  RIG_VFO_FLAG_B = 2;
-  RIG_VFO_FLAG_C = 3;
-  RIG_VFO_FLAG_SUB_C = 4;
-  RIG_VFO_FLAG_MAIN_C = 5;
-  RIG_VFO_FLAG_OTHER = 6;
-  RIG_VFO_FLAG_SUB_A = 7;
-  RIG_VFO_FLAG_SUB_B = 8;
-  RIG_VFO_FLAG_MAIN_A = 9;
-  RIG_VFO_FLAG_MAIN_B = 10;
-  RIG_VFO_FLAG_SUB = 11;
-  RIG_VFO_FLAG_MAIN = 12;
-  RIG_VFO_FLAG_VFO = 13;
-  RIG_VFO_FLAG_MEM = 14;
-  RIG_VFO_FLAG_CURR = 15;
-  RIG_VFO_FLAG_TX_FLAG = 16;
+enum TrxVfoFlag {
+  TRX_VFO_FLAG_UNSPECIFIED = 0;
+  TRX_VFO_FLAG_A = 1;
+  TRX_VFO_FLAG_B = 2;
+  TRX_VFO_FLAG_C = 3;
+  TRX_VFO_FLAG_SUB_C = 4;
+  TRX_VFO_FLAG_MAIN_C = 5;
+  TRX_VFO_FLAG_OTHER = 6;
+  TRX_VFO_FLAG_SUB_A = 7;
+  TRX_VFO_FLAG_SUB_B = 8;
+  TRX_VFO_FLAG_MAIN_A = 9;
+  TRX_VFO_FLAG_MAIN_B = 10;
+  TRX_VFO_FLAG_SUB = 11;
+  TRX_VFO_FLAG_MAIN = 12;
+  TRX_VFO_FLAG_VFO = 13;
+  TRX_VFO_FLAG_MEM = 14;
+  TRX_VFO_FLAG_CURR = 15;
+  TRX_VFO_FLAG_TX_FLAG = 16;
 }
 
-enum RigAntenna {
-  RIG_ANTENNA_UNSPECIFIED = 0;
-  RIG_ANTENNA_1 = 1;
-  RIG_ANTENNA_2 = 2;
-  RIG_ANTENNA_3 = 3;
-  RIG_ANTENNA_4 = 4;
-  RIG_ANTENNA_5 = 5;
-  RIG_ANTENNA_6 = 6;
-  RIG_ANTENNA_7 = 7;
-  RIG_ANTENNA_8 = 8;
+enum TrxAntenna {
+  TRX_ANTENNA_UNSPECIFIED = 0;
+  TRX_ANTENNA_1 = 1;
+  TRX_ANTENNA_2 = 2;
+  TRX_ANTENNA_3 = 3;
+  TRX_ANTENNA_4 = 4;
+  TRX_ANTENNA_5 = 5;
+  TRX_ANTENNA_6 = 6;
+  TRX_ANTENNA_7 = 7;
+  TRX_ANTENNA_8 = 8;
 
 }
 
@@ -159,4 +164,10 @@ enum Band {
   BAND_5CM = 22;
   BAND_3CM = 23;
   BAND_12MM = 24;
+}
+
+enum TrxVfoOperation {
+  TRX_VFO_OPERATION_UNSPECIFIED = 0;
+  TRX_VFO_OPERATION_BAND_UP = 1;
+  TRX_VFO_OPERATION_BAND_DOWN = 2;
 }
