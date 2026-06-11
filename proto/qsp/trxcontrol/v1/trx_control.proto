@@ -46,7 +46,7 @@ message TrxBandMessage {
 }
 message TrxVfoOperationMessage {
   uint32 vfo_id = 1;
-  TrxVfoOperationMessage operation = 2;
+  TrxVfoOperation operation = 2;
 }
 
 message TrxCapabilitiesMessage {

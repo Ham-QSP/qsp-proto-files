@@ -1,6 +1,6 @@
 {
   "name": "@ham-qsp/proto-files",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Generated TypeScript bindings for QSP protobuf schemas.",
   "type": "module",
   "sideEffects": false,
