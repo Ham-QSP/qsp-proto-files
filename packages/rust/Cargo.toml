@@ -1,6 +1,6 @@
 [package]
 name = "qsp-proto-files"
-version = "0.1.7"
+version = "0.1.8"
 edition = "2021"
 description = "Generated Rust bindings for QSP protobuf schemas."
 license = "MIT"
