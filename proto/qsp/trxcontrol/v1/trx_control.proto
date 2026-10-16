@@ -20,7 +20,6 @@ message HelloCommand {
 }
 
 message TransceiverMessage {
-
   oneof transceiver_message {
     TrxFrequencyMessage frequency_message = 1;
     TrxModeMessage mode_message = 2;
@@ -97,7 +96,6 @@ enum TrxAntenna {
   TRX_ANTENNA_6 = 6;
   TRX_ANTENNA_7 = 7;
   TRX_ANTENNA_8 = 8;
-
 }
 
 enum TrxVfoMode {
