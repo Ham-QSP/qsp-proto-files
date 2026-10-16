@@ -1,0 +1,11 @@
+# Golden AgentControlMessage encodings, shared by the Rust and TypeScript tests.
+# Format: <name> <hex-encoded bytes> (empty message: name only).
+# The messages themselves are built in packages/rust/tests/golden.rs and
+# packages/typescript/test/messages.test.mjs; both must produce these bytes.
+hello 0a060a0408011002
+frequency 52090a070801109081db06
+mode 5206120408011002
+band 52061a0408021008
+vfo_operation 52062a0408011002
+capabilities 52492247088118120749432d373330301a0449636f6d221f080110b0ea011880b7d5232204220102032a0201023201013a0548462f366d2a12080210c0ee6d1880c8afa0252201052a010f
+empty

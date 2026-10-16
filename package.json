@@ -7,8 +7,11 @@
   ],
   "scripts": {
     "lint": "buf lint",
+    "format": "buf format -w",
+    "format:check": "buf format --diff --exit-code",
     "generate": "buf generate",
-    "build": "npm --workspace @ham-qsp/proto-files run build"
+    "build": "npm --workspace @ham-qsp/proto-files run build",
+    "test": "npm --workspace @ham-qsp/proto-files test"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.50.0",

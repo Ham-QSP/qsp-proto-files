@@ -2,6 +2,12 @@
   "name": "@ham-qsp/proto-files",
   "version": "0.1.7",
   "description": "Generated TypeScript bindings for QSP protobuf schemas.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ham-QSP/qsp-proto-files.git",
+    "directory": "packages/typescript"
+  },
   "type": "module",
   "sideEffects": false,
   "files": [
@@ -15,6 +21,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "test": "node --test \"test/**/*.test.mjs\"",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
