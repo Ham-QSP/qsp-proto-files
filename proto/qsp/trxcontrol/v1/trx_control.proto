@@ -149,7 +149,7 @@ enum Band {
   BAND_17M = 9;
   BAND_15M = 10;
   BAND_12M = 11;
-  BAND_1OM = 12;
+  BAND_10M = 12;
   BAND_6M = 13;
   BAND_4M = 14;
   BAND_2M = 15;
