@@ -19,7 +19,7 @@ jobs:
           node-version: 24
           cache: npm
 
-      - uses: dtolnay/rust-toolchain@stable
+      - run: rustup update stable
 
       - run: npm ci
       - run: npm run lint
